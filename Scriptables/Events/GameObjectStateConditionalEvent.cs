@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace SO
@@ -18,9 +16,10 @@ namespace SO
         /// </summary>
         public override void Raise()
         {
-            if(targetGameObject == null)
+            if (targetGameObject == null)
             {
-                Debug.Log("Conditional Event from GameObject state doesn't have a gameobject assigned! " + this.gameObject.name);
+                Debug.Log("Conditional Event from GameObject state doesn't have a gameobject assigned! " +
+                          gameObject.name);
                 return;
             }
 
