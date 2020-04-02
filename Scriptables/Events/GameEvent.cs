@@ -19,7 +19,7 @@ namespace SO
             listeners.Remove(l);
         }
 
-        public void Raise()
+        public virtual void Raise()
         {
             for (int i = 0; i < listeners.Count; i++)
             {
