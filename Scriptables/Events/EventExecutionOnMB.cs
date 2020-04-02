@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SO
 {
@@ -10,22 +8,23 @@ namespace SO
         /// Raise the event or comparison as soon as this gameObject is enabled
         /// </summary>
         public bool raiseOnEnable;
+
         /// <summary>
         /// Raise the event or comparison as soon as this gameObject is disabled
         /// </summary>
         public bool raiseOnDisable;
-        
-        void OnEnable()
+
+        private void OnEnable()
         {
-            if(raiseOnEnable)
+            if (raiseOnEnable)
             {
                 Raise();
             }
         }
 
-        void OnDisable()
+        private void OnDisable()
         {
-            if(raiseOnDisable)
+            if (raiseOnDisable)
             {
                 Raise();
             }
@@ -33,7 +32,6 @@ namespace SO
 
         public virtual void Raise()
         {
-
         }
     }
 }
