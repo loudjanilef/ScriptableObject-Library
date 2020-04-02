@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace SO
 {
-    public class NumberVariableToNumberVariable_Comparison : EventExecutionOnMB
+    public class NumberVariableToNumberVariableComparison : EventExecutionOnMB
     {
         public NumberVariable value1;
         public NumberVariable value2;
@@ -18,40 +16,44 @@ namespace SO
         /// </summary>
         public override void Raise()
         {
-            if(value1 == null || value2 == null)
+            if (value1 == null || value2 == null)
             {
-                Debug.Log("Number variable comparison doesn't have variables assigned! " + this.gameObject);
+                Debug.Log("Number variable comparison doesn't have variables assigned! " + gameObject);
                 return;
             }
 
             float v1 = 0;
             float v2 = 0;
 
-            if(value1 is FloatVariable)
+            switch (value1)
             {
-                FloatVariable f = (FloatVariable)value1;
-                v1 = f.value;
+                case FloatVariable floatVariable:
+                {
+                    v1 = floatVariable.value;
+                    break;
+                }
+                case IntVariable intVariable:
+                {
+                    v1 = intVariable.value;
+                    break;
+                }
             }
 
-            if(value1 is IntVariable)
+            switch (value2)
             {
-                IntVariable i = (IntVariable)value1;
-                v1 = i.value;
+                case FloatVariable floatVariable:
+                {
+                    v2 = floatVariable.value;
+                    break;
+                }
+                case IntVariable intVariable:
+                {
+                    v2 = intVariable.value;
+                    break;
+                }
             }
 
-            if (value2 is FloatVariable)
-            {
-                FloatVariable f = (FloatVariable)value2;
-                v2 = f.value;
-            }
-
-            if (value2 is IntVariable)
-            {
-                IntVariable i = (IntVariable)value2;
-                v2 = i.value;
-            }
-
-            if(v1 < v2)
+            if (v1 < v2)
             {
                 IfValue1IsLower.Invoke();
             }
@@ -59,8 +61,6 @@ namespace SO
             {
                 IfValue1IsHigher.Invoke();
             }
-            
         }
-
     }
 }
