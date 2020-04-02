@@ -1,26 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Timers;
 
 namespace SO
 {
-    public class DelayedEvent : MonoBehaviour
+    public class DelayedEvent : GameEvent
     {
-        public GameEvent targetEvent;
+        public float delay;
 
-        /// <summary>
-        /// Use this to raise an event after some time has passed
-        /// </summary>
-        public void Raise(float timer)
+        private readonly Timer timer = new Timer();
+
+        public DelayedEvent()
         {
-            StartCoroutine(DelayedRaise(timer));
+            timer.Elapsed += (s, e) =>
+            {
+                base.Raise();
+                timer.Stop();
+            };
         }
 
-        IEnumerator DelayedRaise(float t)
+        public override void Raise()
         {
-            yield return new WaitForSeconds(t);
-            targetEvent.Raise();
+            timer.Interval = delay; // Allows delay changes
+            timer.Start();
         }
-      
     }
 }
