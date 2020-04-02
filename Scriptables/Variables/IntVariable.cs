@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SO
 {
@@ -16,16 +14,18 @@ namespace SO
 
         public void Set(NumberVariable v)
         {
-            if(v is FloatVariable)
+            switch (v)
             {
-                FloatVariable f = (FloatVariable)v;
-                value = Mathf.RoundToInt(f.value);
-            }
-
-            if(v is IntVariable)
-            {
-                IntVariable i = (IntVariable)v;
-                value = i.value;
+                case FloatVariable floatVariable:
+                {
+                    value = Mathf.RoundToInt(floatVariable.value);
+                    break;
+                }
+                case IntVariable intVariable:
+                {
+                    value = intVariable.value;
+                    break;
+                }
             }
         }
 
@@ -33,19 +33,21 @@ namespace SO
         {
             value += v;
         }
-        
+
         public void Add(NumberVariable v)
         {
-            if (v is FloatVariable)
+            switch (v)
             {
-                FloatVariable f = (FloatVariable)v;
-                value += Mathf.RoundToInt(f.value);
-            }
-
-            if (v is IntVariable)
-            {
-                IntVariable i = (IntVariable)v;
-                value += i.value;
+                case FloatVariable floatVariable:
+                {
+                    value += Mathf.RoundToInt(floatVariable.value);
+                    break;
+                }
+                case IntVariable intVariable:
+                {
+                    value += intVariable.value;
+                    break;
+                }
             }
         }
     }

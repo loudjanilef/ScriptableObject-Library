@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SO
 {
@@ -8,7 +6,7 @@ namespace SO
     public class BoolVariable : ScriptableObject
     {
         public bool value;
-        
+
         public void Set(bool v)
         {
             value = v;
@@ -33,6 +31,5 @@ namespace SO
         {
             return value == v.value;
         }
-
     }
 }

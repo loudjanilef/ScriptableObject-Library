@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SO
 {
@@ -26,7 +24,7 @@ namespace SO
 
         public void ReplaceAt(Transform targetTransform, int pos)
         {
-            if(pos < value.Length)
+            if (pos < value.Length)
             {
                 value[pos] = targetTransform;
             }
