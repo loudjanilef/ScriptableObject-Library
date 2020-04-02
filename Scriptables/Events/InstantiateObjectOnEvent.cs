@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SO
 {
@@ -13,25 +11,23 @@ namespace SO
     {
         public GameObjectVariable targetGameObject;
         public Transform targetSpawn;
-        
+
         /// <summary>
         /// Make this true if you only want one instance of the prefab,
         /// Useful for visualizing gameObject that change
         /// </summary>
         public bool keepOnlyOneInstance;
-        GameObject previousInstance;
+
+        private GameObject previousInstance;
 
         public override void Response()
         {
-            if (keepOnlyOneInstance)
+            if (keepOnlyOneInstance && previousInstance)
             {
-                if (previousInstance)
-                {
-                    Destroy(previousInstance);
-                }
+                Destroy(previousInstance);
             }
 
-            previousInstance = Instantiate(targetGameObject.value, targetSpawn.position, targetSpawn.rotation) as GameObject;
+            previousInstance = Instantiate(targetGameObject.value, targetSpawn.position, targetSpawn.rotation);
 
             response.Invoke();
         }
