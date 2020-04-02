@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using SO;
 using UnityEngine;
-using SO;
 
 namespace SA
 {
@@ -10,11 +7,10 @@ namespace SA
     {
         public TransformVariable transformVariable;
 
-		private void OnEnable()
-		{
-			transformVariable.value = this.transform;
-			Destroy(this);
-		}
-
-	}
+        private void OnEnable()
+        {
+            transformVariable.value = transform;
+            Destroy(this);
+        }
+    }
 }
