@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace SO
@@ -13,13 +11,13 @@ namespace SO
         /// <summary>
         /// Override this to override the OnEnableLogic()
         /// </summary>
-        public virtual void OnEnableLogic()
+        protected virtual void OnEnableLogic()
         {
             if (gameEvent != null)
                 gameEvent.Register(this);
         }
 
-        void OnEnable()
+        private void OnEnable()
         {
             OnEnableLogic();
         }
@@ -27,13 +25,13 @@ namespace SO
         /// <summary>
         /// Override this to override the OnDisableLogic()
         /// </summary>
-        public virtual void OnDisableLogic()
+        protected virtual void OnDisableLogic()
         {
             if (gameEvent != null)
                 gameEvent.UnRegister(this);
         }
 
-        void OnDisable()
+        private void OnDisable()
         {
             OnDisableLogic();
         }
