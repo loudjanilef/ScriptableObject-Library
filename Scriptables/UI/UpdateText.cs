@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using SO;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 namespace SO.UI
 {
@@ -10,7 +6,7 @@ namespace SO.UI
     {
         public StringVariable targetString;
         public Text targetText;
-        
+
         /// <summary>
         /// Use this to update a text UI element based on the target string variable
         /// </summary>
@@ -18,7 +14,7 @@ namespace SO.UI
         {
             targetText.text = targetString.value;
         }
-        
+
         public void Raise(string target)
         {
             targetText.text = target;

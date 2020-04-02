@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using SO;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 namespace SO.UI
 {
@@ -13,17 +9,18 @@ namespace SO.UI
 
         public override void Raise()
         {
-            if(targetVariable is FloatVariable)
+            switch (targetVariable)
             {
-                FloatVariable f = (FloatVariable)targetVariable;
-                targetSlider.value = f.value;
-                return;
-            }
-
-            if(targetVariable is IntVariable)
-            {
-                IntVariable i = (IntVariable)targetVariable;
-                targetSlider.value = i.value;
+                case FloatVariable floatVariable:
+                {
+                    targetSlider.value = floatVariable.value;
+                    return;
+                }
+                case IntVariable intVariable:
+                {
+                    targetSlider.value = intVariable.value;
+                    break;
+                }
             }
         }
     }
