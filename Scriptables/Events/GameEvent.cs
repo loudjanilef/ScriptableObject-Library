@@ -6,14 +6,14 @@ namespace SO
     [CreateAssetMenu(menuName = "Game Event")]
     public class GameEvent : ScriptableObject
     {
-        private readonly List<GameEventListener> listeners = new List<GameEventListener>();
+        private readonly List<IGameEventListener> listeners = new List<IGameEventListener>();
 
-        public void Register(GameEventListener l)
+        public void Register(IGameEventListener l)
         {
             listeners.Add(l);
         }
 
-        public void UnRegister(GameEventListener l)
+        public void UnRegister(IGameEventListener l)
         {
             listeners.Remove(l);
         }
