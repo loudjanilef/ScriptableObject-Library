@@ -1,32 +1,35 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SO
 {
     [CreateAssetMenu(menuName = "Variables/Transform Array")]
-    public class TransformArrayVariable : ScriptableObject
+    public class TransformArrayVariable : VariableEvent<Transform[]>
     {
-        public Transform[] value;
-
         public int Length()
         {
-            return value.Length;
+            return Value.Length;
         }
 
         public void Clear()
         {
-            value = null;
+            Value = null;
         }
 
         public void Init(int v)
         {
-            value = new Transform[v];
+            Value = new Transform[v];
         }
 
-        public void ReplaceAt(Transform targetTransform, int pos)
+        public void ReplaceAt(Transform targetTransform, int position)
         {
-            if (pos < value.Length)
+            if (position < Value.Length)
             {
-                value[pos] = targetTransform;
+                Value[position] = targetTransform;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException(nameof(position));
             }
         }
     }

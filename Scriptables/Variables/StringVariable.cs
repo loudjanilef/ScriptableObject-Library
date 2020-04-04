@@ -3,28 +3,16 @@
 namespace SO
 {
     [CreateAssetMenu(menuName = "Variables/String")]
-    public class StringVariable : ScriptableObject
+    public class StringVariable : VariableEvent<string>
     {
-        public string value;
-
-        public void Set(string v)
-        {
-            value = v;
-        }
-
-        public void Set(StringVariable v)
-        {
-            value = v.value;
-        }
-
         public bool IsEmptyOrNull()
         {
-            return string.IsNullOrEmpty(value);
+            return string.IsNullOrEmpty(Value);
         }
 
         public void Clear()
         {
-            value = string.Empty;
+            Value = string.Empty;
         }
     }
 }

@@ -3,23 +3,11 @@
 namespace SO
 {
     [CreateAssetMenu(menuName = "Variables/Transform")]
-    public class TransformVariable : ScriptableObject
+    public class TransformVariable : VariableEvent<Transform>
     {
-        public Transform value;
-
-        public void Set(Transform v)
-        {
-            value = v;
-        }
-
-        public void Set(TransformVariable v)
-        {
-            value = v.value;
-        }
-
         public void Clear()
         {
-            value = null;
+            Value = null;
         }
     }
 }
