@@ -9,7 +9,7 @@ namespace SA
 
         private void OnEnable()
         {
-            transformVariable.value = transform;
+            transformVariable.Value = transform;
             Destroy(this);
         }
     }
