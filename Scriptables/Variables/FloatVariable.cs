@@ -3,52 +3,46 @@
 namespace SO
 {
     [CreateAssetMenu(menuName = "Variables/Float")]
-    public class FloatVariable : NumberVariable
+    public class FloatVariable : VariableEvent<float>
     {
-        public float value;
-
-        public void Set(float v)
+        public void Add(int v)
         {
-            value = v;
+            Value += v;
         }
 
-        public void Set(NumberVariable v)
+        public void Add(IntVariable intVariable)
         {
-            switch (v)
-            {
-                case FloatVariable floatVariable:
-                {
-                    value = floatVariable.value;
-                    break;
-                }
-                case IntVariable intVariable:
-                {
-                    value = intVariable.value;
-                    break;
-                }
-            }
+            Value += intVariable.Value;
         }
 
         public void Add(float v)
         {
-            value += v;
+            Value += v;
         }
 
-        public void Add(NumberVariable v)
+        public void Add(FloatVariable floatVariable)
         {
-            switch (v)
-            {
-                case FloatVariable floatVariable:
-                {
-                    value += floatVariable.value;
-                    break;
-                }
-                case IntVariable intVariable:
-                {
-                    value += intVariable.value;
-                    break;
-                }
-            }
+            Value += floatVariable.Value;
+        }
+
+        public void Sub(int v)
+        {
+            Value -= v;
+        }
+
+        public void Sub(IntVariable intVariable)
+        {
+            Value -= intVariable.Value;
+        }
+
+        public void Sub(float v)
+        {
+            Value -= v;
+        }
+
+        public void Sub(FloatVariable floatVariable)
+        {
+            Value -= floatVariable.Value;
         }
     }
 }

@@ -3,52 +3,46 @@
 namespace SO
 {
     [CreateAssetMenu(menuName = "Variables/Integer")]
-    public class IntVariable : NumberVariable
+    public class IntVariable : VariableEvent<int>
     {
-        public int value;
-
-        public void Set(int v)
-        {
-            value = v;
-        }
-
-        public void Set(NumberVariable v)
-        {
-            switch (v)
-            {
-                case FloatVariable floatVariable:
-                {
-                    value = Mathf.RoundToInt(floatVariable.value);
-                    break;
-                }
-                case IntVariable intVariable:
-                {
-                    value = intVariable.value;
-                    break;
-                }
-            }
-        }
-
         public void Add(int v)
         {
-            value += v;
+            Value += v;
         }
 
-        public void Add(NumberVariable v)
+        public void Add(IntVariable intVariable)
         {
-            switch (v)
-            {
-                case FloatVariable floatVariable:
-                {
-                    value += Mathf.RoundToInt(floatVariable.value);
-                    break;
-                }
-                case IntVariable intVariable:
-                {
-                    value += intVariable.value;
-                    break;
-                }
-            }
+            Value += intVariable.Value;
+        }
+
+        public void Add(float v)
+        {
+            Value += Mathf.RoundToInt(v);
+        }
+
+        public void Add(FloatVariable floatVariable)
+        {
+            Value += Mathf.RoundToInt(floatVariable.Value);
+        }
+
+        public void Sub(int v)
+        {
+            Value -= v;
+        }
+
+        public void Sub(IntVariable intVariable)
+        {
+            Value -= intVariable.Value;
+        }
+
+        public void Sub(float v)
+        {
+            Value -= Mathf.RoundToInt(v);
+        }
+
+        public void Sub(FloatVariable floatVariable)
+        {
+            Value -= Mathf.RoundToInt(floatVariable.Value);
         }
     }
 }
