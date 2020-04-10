@@ -1,7 +1,9 @@
 using System;
+using UnityEngine;
 
 namespace SO
 {
+    [CreateAssetMenu(menuName = "Logic/IsLowerThan")]
     public class IsLowerThan : GameEvent, IGameEventListener
     {
         private void OnEnable()
@@ -16,7 +18,7 @@ namespace SO
                 variable2.Register(this);
             }
         }
-        
+
         private void OnDisable()
         {
             if (variable1)

@@ -1,7 +1,9 @@
 using System;
+using UnityEngine;
 
 namespace SO
 {
+    [CreateAssetMenu(menuName = "Logic/IsGreaterThan")]
     public class IsGreaterThan : GameEvent, IGameEventListener
     {
         private void OnEnable()

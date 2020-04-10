@@ -1,5 +1,8 @@
+using UnityEngine;
+
 namespace SO
 {
+    [CreateAssetMenu(menuName = "Logic/IsEqualTo")]
     public class IsEqualTo : GameEvent, IGameEventListener
     {
         private void OnEnable()

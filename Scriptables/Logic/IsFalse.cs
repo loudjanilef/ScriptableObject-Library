@@ -1,7 +1,8 @@
-using System;
+using UnityEngine;
 
 namespace SO
 {
+    [CreateAssetMenu(menuName = "Logic/IsFalse")]
     public class Isfalse : GameEvent, IGameEventListener
     {
         private void OnEnable()
@@ -11,7 +12,7 @@ namespace SO
                 variable.Register(this);
             }
         }
-        
+
         private void OnDisable()
         {
             if (variable)

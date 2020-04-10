@@ -1,5 +1,8 @@
+using UnityEngine;
+
 namespace SO
 {
+    [CreateAssetMenu(menuName = "Logic/IsTrue")]
     public class IsTrue : GameEvent, IGameEventListener
     {
         private void OnEnable()
