@@ -2,14 +2,37 @@ namespace SO
 {
     public class IsTrue : GameEvent, IGameEventListener
     {
+        private void OnEnable()
+        {
+            if (variable)
+            {
+                variable.Register(this);
+            }
+        }
+        
+        private void OnDisable()
+        {
+            if (variable)
+            {
+                variable.UnRegister(this);
+            }
+        }
+
         public VariableEvent<bool> Variable
         {
             get => variable;
             set
             {
-                variable?.UnRegister(this);
+                if (variable)
+                {
+                    variable.UnRegister(this);
+                }
+
                 variable = value;
-                variable.Register(this);
+                if (variable)
+                {
+                    variable.Register(this);
+                }
             }
         }
 

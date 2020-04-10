@@ -4,14 +4,47 @@ namespace SO
 {
     public class IsGreaterThan : GameEvent, IGameEventListener
     {
+        private void OnEnable()
+        {
+            if (variable1)
+            {
+                variable1.Register(this);
+            }
+
+            if (variable2)
+            {
+                variable2.Register(this);
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (variable1)
+            {
+                variable1.UnRegister(this);
+            }
+
+            if (variable2)
+            {
+                variable2.UnRegister(this);
+            }
+        }
+
         public VariableEvent<IComparable> Variable1
         {
             get => variable1;
             set
             {
-                variable1?.UnRegister(this);
+                if (variable1)
+                {
+                    variable1.UnRegister(this);
+                }
+
                 variable1 = value;
-                variable1.Register(this);
+                if (variable1)
+                {
+                    variable1.Register(this);
+                }
             }
         }
 
@@ -20,9 +53,16 @@ namespace SO
             get => variable2;
             set
             {
-                variable2?.UnRegister(this);
+                if (variable2)
+                {
+                    variable2.UnRegister(this);
+                }
+
                 variable2 = value;
-                variable2.Register(this);
+                if (variable2)
+                {
+                    variable2.Register(this);
+                }
             }
         }
 

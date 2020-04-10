@@ -5,15 +5,34 @@ namespace SO
     [CreateAssetMenu(menuName = "Logic/Negate")]
     public class Negate : BoolVariable, IGameEventListener
     {
+        private void OnEnable()
+        {
+            if (variable)
+            {
+                variable.Register(this);
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (variable)
+            {
+                variable.UnRegister(this);
+            }
+        }
+
         public BoolVariable Variable
         {
             get => variable;
             set
             {
-                if (variable != null)
+                if (variable)
                     variable.UnRegister(this);
                 variable = value;
-                variable.Register(this);
+                if (variable)
+                {
+                    variable.Register(this);
+                }
             }
         }
 
