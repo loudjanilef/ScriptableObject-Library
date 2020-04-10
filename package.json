@@ -1,0 +1,21 @@
+{
+  "name": "com.loudjanilef.gameevents",
+  "version": "0.1.1-preview",
+  "displayName": "Scriptable Game Events",
+  "description": "A simple game event system based on ScriptableObjects.\nSupports variables with auto raise on update, UI updaters and some logical or conditional events.",
+  "unity": "2017.3",
+  "keywords": [
+    "scriptableObject",
+    "scriptable",
+    "object",
+    "gameevent",
+    "event",
+    "observer",
+    "observable"
+  ],
+  "author": {
+    "name": "Nathan loudjani",
+    "email": "nathan.loudjani@outlook.com",
+    "url": "https://github.com/loudjanilef/ScriptableObject-Library"
+  }
+}
