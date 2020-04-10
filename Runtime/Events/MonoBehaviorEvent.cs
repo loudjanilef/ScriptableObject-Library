@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SA
 {
-    public class GameEventMonoBehaviorRaiser : MonoBehaviour
+    public class MonoBehaviorEvent : MonoBehaviour
     {
         public GameEvent GameEvent;
 

@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace SO
 {
-    [CreateAssetMenu(menuName = "Logic/IsEqualTo")]
-    public class IsEqualTo : GameEvent, IGameEventListener
+    [CreateAssetMenu(menuName = "Conditional/IsLowerThan")]
+    public class IsLowerThan : GameEvent, IGameEventListener
     {
         private void OnEnable()
         {
@@ -17,7 +18,7 @@ namespace SO
                 variable2.Register(this);
             }
         }
-        
+
         private void OnDisable()
         {
             if (variable1)
@@ -31,7 +32,7 @@ namespace SO
             }
         }
 
-        public VariableEvent<object> Variable1
+        public VariableEvent<IComparable> Variable1
         {
             get => variable1;
             set
@@ -49,7 +50,7 @@ namespace SO
             }
         }
 
-        public VariableEvent<object> Variable2
+        public VariableEvent<IComparable> Variable2
         {
             get => variable2;
             set
@@ -67,15 +68,15 @@ namespace SO
             }
         }
 
-        private VariableEvent<object> variable1;
-        private VariableEvent<object> variable2;
+        private VariableEvent<IComparable> variable1;
+        private VariableEvent<IComparable> variable2;
 
         public void Response()
         {
             if (variable1 == null || variable2 == null)
                 return;
 
-            if (Variable1.Value.Equals(Variable2.Value))
+            if (Variable1.Value.CompareTo(Variable2.Value) < 0)
             {
                 Raise();
             }

@@ -1,24 +1,33 @@
+using SO.UI;
 using UnityEngine.Events;
 
 namespace SO
 {
-    public class UnityEventTrigger : IGameEventListener
+    public class UnityEventTrigger : MonoBehaviorEventListener
     {
         public GameEvent GameEvent
         {
             get => gameEvent;
             set
             {
-                gameEvent?.UnRegister(this);
+                if (gameEvent)
+                {
+                    gameEvent.UnRegister(this);
+                }
+
                 gameEvent = value;
-                gameEvent.Register(this);
+
+                if (gameEvent)
+                {
+                    gameEvent.Register(this);
+                }
             }
         }
 
         private GameEvent gameEvent;
         public UnityEvent UnityEvent;
 
-        public void Response()
+        public override void Response()
         {
             UnityEvent.Invoke();
         }

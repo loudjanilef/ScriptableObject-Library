@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace SO
 {
-    [CreateAssetMenu(menuName = "Logic/IsLowerThan")]
-    public class IsLowerThan : GameEvent, IGameEventListener
+    [CreateAssetMenu(menuName = "Conditional/IsGreaterThan")]
+    public class IsGreaterThan : GameEvent, IGameEventListener
     {
         private void OnEnable()
         {
@@ -76,7 +76,7 @@ namespace SO
             if (variable1 == null || variable2 == null)
                 return;
 
-            if (Variable1.Value.CompareTo(Variable2.Value) < 0)
+            if (Variable1.Value.CompareTo(Variable2.Value) > 0)
             {
                 Raise();
             }

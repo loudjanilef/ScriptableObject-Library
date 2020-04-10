@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace SO
 {
-    [CreateAssetMenu(menuName = "Logic/IsTrue")]
-    public class IsTrue : GameEvent, IGameEventListener
+    [CreateAssetMenu(menuName = "Conditional/IsFalse")]
+    public class Isfalse : GameEvent, IGameEventListener
     {
         private void OnEnable()
         {
@@ -12,7 +12,7 @@ namespace SO
                 variable.Register(this);
             }
         }
-        
+
         private void OnDisable()
         {
             if (variable)
@@ -46,7 +46,7 @@ namespace SO
             if (variable == null)
                 return;
 
-            if (Variable.Value)
+            if (!Variable.Value)
             {
                 Raise();
             }
