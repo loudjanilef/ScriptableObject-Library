@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace SO
 {
     public class VariableEvent<T> : GameEvent
     {
+        [SerializeField]
         private T value;
 
         public T Value
