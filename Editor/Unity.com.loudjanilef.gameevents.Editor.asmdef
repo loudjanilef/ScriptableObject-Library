@@ -1,6 +1,6 @@
 {
     "name": "Unity.com.loudjanilef.gameevents.Editor",
-    "references": [],
+    "references": ["Unity.com.loudjanilef.gameevents.Runtime"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
