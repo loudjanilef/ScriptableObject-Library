@@ -6,21 +6,11 @@ namespace Tests
 {
     public class GameEventTests
     {
-        private class TestGameEventListener : IGameEventListener
-        {
-            public int ResponseCallNumber;
-
-            public void Response()
-            {
-                ResponseCallNumber++;
-            }
-        }
-
         [Test]
         public void GameEventNotifiesOnlyRegisteredListeners()
         {
             GameEvent gameEvent = ScriptableObject.CreateInstance<GameEvent>();
-            TestGameEventListener listener = new TestGameEventListener();
+            SimpleGameEventListener listener = new SimpleGameEventListener();
             Assert.AreEqual(0, listener.ResponseCallNumber);
 
             gameEvent.Raise();
