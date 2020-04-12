@@ -2,7 +2,7 @@
 
 namespace SO.UI
 {
-    public class ToggleUpdater : MonoBehaviorEventListener
+    public class ToggleUpdater : MonoBehaviourEventListener
     {
         public BoolVariable targetVariable;
         public Toggle targetToggle;

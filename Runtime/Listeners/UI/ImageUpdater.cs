@@ -2,7 +2,7 @@
 
 namespace SO.UI
 {
-    public class ImageUpdater : MonoBehaviorEventListener
+    public class ImageUpdater : MonoBehaviourEventListener
     {
         public SpriteVariable targetVariable;
         public Image targetImage;

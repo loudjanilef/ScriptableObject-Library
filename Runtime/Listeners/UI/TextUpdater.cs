@@ -2,7 +2,7 @@
 
 namespace SO.UI
 {
-    public class TextUpdater : MonoBehaviorEventListener
+    public class TextUpdater : MonoBehaviourEventListener
     {
         public StringVariable targetVariable;
         public Text targetText;

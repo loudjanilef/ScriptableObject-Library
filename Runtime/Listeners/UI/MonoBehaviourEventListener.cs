@@ -2,7 +2,7 @@
 
 namespace SO.UI
 {
-    public abstract class MonoBehaviorEventListener : MonoBehaviour, IGameEventListener
+    public abstract class MonoBehaviourEventListener : MonoBehaviour, IGameEventListener
     {
         /// <summary>
         /// Determine if the Response should be called as soon as the game event is enabled

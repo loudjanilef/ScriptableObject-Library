@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace SO
 {
-    public class UnityEventTrigger : MonoBehaviorEventListener
+    public class UnityEventTrigger : MonoBehaviourEventListener
     {
         public GameEvent GameEvent
         {

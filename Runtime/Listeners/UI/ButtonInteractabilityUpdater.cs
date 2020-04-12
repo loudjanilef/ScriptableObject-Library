@@ -2,7 +2,7 @@
 
 namespace SO.UI
 {
-    public class ButtonInteractabilityUpdater : MonoBehaviorEventListener
+    public class ButtonInteractabilityUpdater : MonoBehaviourEventListener
     {
         public BoolVariable targetVariable;
         public Button targetButton;

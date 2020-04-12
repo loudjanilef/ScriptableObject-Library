@@ -8,7 +8,7 @@ namespace SO
     /// Assign a target event and it will execute the response when it's called.
     /// If you don't assign an event, you can manually execute the Responce
     /// </summary>
-    public class InstantiateObjectOnEvent : MonoBehaviorEventListener
+    public class InstantiateObjectOnEvent : MonoBehaviourEventListener
     {
         public GameEvent listenedEvent;
         public GameObjectVariable targetGameObject;

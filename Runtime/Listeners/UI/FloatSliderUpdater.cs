@@ -2,7 +2,7 @@ using UnityEngine.UI;
 
 namespace SO.UI
 {
-    public class FloatSliderUpdater : MonoBehaviorEventListener
+    public class FloatSliderUpdater : MonoBehaviourEventListener
     {
         public FloatVariable targetVariable;
         public Slider targetSlider;

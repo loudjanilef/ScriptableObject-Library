@@ -2,7 +2,7 @@
 
 namespace SO.UI
 {
-    public class IntSliderUpdater : MonoBehaviorEventListener
+    public class IntSliderUpdater : MonoBehaviourEventListener
     {
         public IntVariable targetVariable;
         public Slider targetSlider;
