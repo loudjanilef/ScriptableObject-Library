@@ -6,6 +6,21 @@ namespace SO
     {
         public int Count => Value.Count;
 
+        public void Init()
+        {
+            Value = new List<T>();
+        }
+
+        public void Init(int capacity)
+        {
+            Value = new List<T>(capacity);
+        }
+
+        public void Init(IEnumerable<T> collection)
+        {
+            Value = new List<T>(collection);
+        }
+
         public void Add(T element)
         {
             Value.Add(element);
