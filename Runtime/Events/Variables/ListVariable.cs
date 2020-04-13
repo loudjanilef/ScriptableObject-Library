@@ -4,6 +4,8 @@ namespace SO
 {
     public class ListVariable<T> : VariableEvent<List<T>>
     {
+        public int Count => Value.Count;
+
         public void Add(T element)
         {
             Value.Add(element);

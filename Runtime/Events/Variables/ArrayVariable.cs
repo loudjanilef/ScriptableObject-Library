@@ -4,10 +4,7 @@ namespace SO
 {
     public class ArrayVariable<T> : VariableEvent<T[]>
     {
-        public int Length()
-        {
-            return Value.Length;
-        }
+        public int Length => Value.Length;
 
         public void Empty()
         {
