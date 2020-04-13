@@ -26,7 +26,7 @@ namespace Tests
             stringVariable.Value = "a";
             stringVariable.Register(listener);
             Assert.AreEqual(0, listener.ResponseCallNumber);
-            Assert.IsNotNull(stringVariable.Value);
+            Assert.AreNotEqual("", stringVariable.Value);
             stringVariable.Clear();
             Assert.AreEqual(1, listener.ResponseCallNumber);
             Assert.AreEqual("", stringVariable.Value);
