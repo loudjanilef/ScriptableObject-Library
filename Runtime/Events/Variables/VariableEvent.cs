@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace SO
 {
-    public class VariableEvent<T> : GameEvent
+    public abstract class VariableEvent<T> : GameEvent
     {
-        [SerializeField]
-        private T value;
+        [SerializeField] private T value;
 
         public T Value
         {
@@ -25,7 +24,7 @@ namespace SO
 
         protected bool Equals(VariableEvent<T> other)
         {
-            return base.Equals(other) && EqualityComparer<T>.Default.Equals(value, other.value);
+            return EqualityComparer<T>.Default.Equals(value, other.value);
         }
 
         public override bool Equals(object obj)
