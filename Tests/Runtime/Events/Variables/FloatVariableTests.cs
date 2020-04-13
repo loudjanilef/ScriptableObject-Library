@@ -2,7 +2,7 @@ using NUnit.Framework;
 using SO;
 using UnityEngine;
 
-namespace Tests.Variables
+namespace Tests
 {
     public class FloatVariableTests
     {
